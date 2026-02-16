@@ -1,0 +1,177 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: black;
+    color: azure;
+    overflow: hidden;
+}
+nav{
+    display: flex;
+    height: 3rem;
+    background-color:#202020;
+    border-bottom: 1px solid pink;
+    border-radius: 5px;
+}
+.nav-part1{
+    display: flex;
+    align-items: center;
+    flex: 1.3;
+}
+.logo{
+    font-size: 2rem;
+    padding: 0 1rem;
+    font-weight: 700;
+    color:pink;
+}
+/* .player-name{
+    color: pink;
+} */
+.nav-part2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+}
+main{
+    display: flex;
+}
+.playlist{
+    /* background-color:blue; */
+    height: 90vh;
+    width: 35vw;
+    overflow:scroll;
+    scrollbar-width: none;
+    margin:0  1.5rem;
+    border-right:1px solid pink;
+    border-radius: 5px;
+}
+.song{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color:#202020;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+.song:hover{
+    cursor: pointer;
+    background-color: #434141;
+}
+.music-player .upper-player {
+    height: 100%;
+    width: 69vw;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.visualizer {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.3rem;
+    height: 5rem;
+    width: 80%;
+    max-width: 800px;
+}
+
+.visualizer .bar {
+    width: 0.5rem;
+    height: 1rem;
+    background: linear-gradient(180deg, #00d4ff 0%, #0099ff 50%, #6600ff 100%);
+    border-radius: 2px;
+    opacity: 0.8;
+    animation: dance 0.6s ease-in-out infinite;
+}
+
+.visualizer .bar:nth-child(1) { animation-delay: 0s; }
+.visualizer .bar:nth-child(2) { animation-delay: 0.05s; }
+.visualizer .bar:nth-child(3) { animation-delay: 0.1s; }
+.visualizer .bar:nth-child(4) { animation-delay: 0.15s; }
+.visualizer .bar:nth-child(5) { animation-delay: 0.2s; }
+.visualizer .bar:nth-child(6) { animation-delay: 0.25s; }
+.visualizer .bar:nth-child(7) { animation-delay: 0.3s; }
+.visualizer .bar:nth-child(8) { animation-delay: 0.35s; }
+.visualizer .bar:nth-child(9) { animation-delay: 0.3s; }
+.visualizer .bar:nth-child(10) { animation-delay: 0.25s; }
+.visualizer .bar:nth-child(11) { animation-delay: 0.2s; }
+.visualizer .bar:nth-child(12) { animation-delay: 0.15s; }
+.visualizer .bar:nth-child(13) { animation-delay: 0.1s; }
+.visualizer .bar:nth-child(14) { animation-delay: 0.05s; }
+.visualizer .bar:nth-child(15) { animation-delay: 0s; }
+.visualizer .bar:nth-child(16) { animation-delay: 0.05s; }
+
+@keyframes dance {
+    0%, 100% { height: 1rem; }
+    50% { height: 4rem; }
+}
+.music-player .lower-player {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(32, 32, 32, 0.9) 100%);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: fixed;
+    bottom: 1rem;
+    width: 65vw;
+    margin-right: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 192, 203, 0.3);
+    padding: 0 1.5rem;
+}
+
+.music-player .lower-player i {
+    height: 2rem;
+    padding-top: 0.7rem;
+    margin: 0;
+    font-size: 1.1rem;
+    color: #00d4ff;
+    transition: all 0.3s ease;
+}
+
+.music-player .lower-player i:hover {
+    background-color: #202020;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: #ff00ff;
+}
+
+.music-player .lower-player .play {
+    font-size: 1.3rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: rgba(0, 212, 255, 0.2);
+}
+
+.music-player .lower-player .play:hover {
+    background-color: rgba(0, 212, 255, 0.4);
+}
+
+.music-player .lower-player .progress {
+    width: 20rem;
+    height: 0.4rem;
+    cursor: pointer;
+    accent-color: #00d4ff;
+}
+
+.music-player .lower-player .time {
+    font-size: 0.75rem;
+    color: #0099ff;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
