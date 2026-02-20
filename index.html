@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <div class="song-backdrop"></div>
+    
     <nav>
         <div class="nav-part1">
             <div class="logo">DSDL</div>
@@ -50,6 +52,7 @@
         </div>
         <div class="music-player">
             <div class="upper-player">
+                <div class="upper-image-container"></div>
                 <div class="visualizer">
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -73,9 +76,13 @@
                 <i class="fa-solid fa-caret-left"></i>
                 <i class="fa-solid fa-play play"></i>
                 <i class="fa-solid fa-caret-right"></i>
+                <i class="fa-solid fa-redo replay"></i>
+                <i class="fa-solid fa-repeat loop"></i>
                 <span class="time time-current">00:00</span>
                 <input type="range" class="progress" min="0" max="100" value="0">
                 <span class="time time-duration">00:41</span>
+                <i class="fa-solid fa-volume-high volume-icon"></i>
+                <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
             </div>
         </div>
     </main>
