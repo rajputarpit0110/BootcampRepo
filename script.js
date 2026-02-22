@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "Dil.mp3",
     "Bam Lahiri.mp3",
     "Lae Dooba.mp3",
-    "Shararatt.mp3",
-    "Main Hoon.mp3",
-    "Qubool.mp3",
+    "Shararat (From Dhurandhar).mp3",
+    "Main Hoon (From Battle Of Galwan).mp3",
+    "Qubool (From Haq).mp3",
     "Parvati Boli Shankar Se.mp3",
-    "Preet Re.mp3",
+    "Preet Re - From Dhadak 2.mp3",
     "Apna Bana Le.mp3",
     "Nazm Nazm.mp3",
-    "Saiyaara.mp3"
+    "Saiyaara (From Saiyaara).mp3"
   ];
 
   // 🔹 Image files
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/Dil.jfif",
     "images/Bam Lahiri.jfif",
     "images/Lae Dooba.jfif",
-    "images/Shararatt.jfif",
+    "images/Shararat.jfif",
     "images/Main Hoon.jfif",
     "images/Qubool.jfif",
     "images/Parvati Boli Shankar Se.jfif",
     "images/Preet Re.jfif",
     "images/Apna Bana Le.jfif",
     "images/Nazm Nazm.jfif",
-    "images/Saiyaara.jfif"
+    "images/Saiyara.jfif"
   ];
 
   const audio = new Audio();
