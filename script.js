@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Iss Tarah.mp3",
     "Khat.mp3",
     "O Meri Laila.mp3",
-    "Dil.mp3",
+    "Dil (feat. Sara Gurpal).mp3",
     "Bam Lahiri.mp3",
     "Lae Dooba.mp3",
     "Shararat (From Dhurandhar).mp3",
@@ -69,6 +69,49 @@ document.addEventListener("DOMContentLoaded", function () {
   const volume = document.querySelector('.volume');
   const volumeIcon = document.querySelector('.volume-icon');
   let prevVolume = 1;
+  const pulses = document.querySelectorAll('.pulse');
+  const bars = document.querySelectorAll('.visualizer .bar');
+
+  // 🔹 Web Audio API Setup
+  let audioContext;
+  let analyser;
+  let dataArray;
+  let animationId;
+
+  function initAudioContext() {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      const source = audioContext.createMediaElementAudioSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+    }
+    if (audioContext.state === 'suspended') {
+      audioContext.resume();
+    }
+  }
+
+  function updateVisualizer() {
+    if (!analyser) return;
+    
+    analyser.getByteFrequencyData(dataArray);
+    const barCount = bars.length;
+    const dataPointsPerBar = Math.floor(dataArray.length / barCount);
+
+    bars.forEach((bar, index) => {
+      let sum = 0;
+      for (let i = 0; i < dataPointsPerBar; i++) {
+        sum += dataArray[index * dataPointsPerBar + i];
+      }
+      const average = sum / dataPointsPerBar;
+      const barHeight = (average / 255) * 15 + 1; // Scale to rem
+      bar.style.height = barHeight + 'rem';
+    });
+
+    animationId = requestAnimationFrame(updateVisualizer);
+  }
 
   function formatTime(sec) {
     if (!isFinite(sec)) return '00:00';
@@ -101,6 +144,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (upperPlayer) {
       upperPlayer.classList.add('song-playing');
     }
+
+    // Start pulse animation
+    pulses.forEach(pulse => {
+      pulse.classList.add('animate');
+    });
 
     // highlight active song
     for (let i = 0; i < songs.length; i++) {
@@ -280,10 +328,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   audio.addEventListener('play', function () {
     if (navPart2 && songs[currentSong]) navPart2.textContent = songs[currentSong].textContent;
+    // Start pulse animation
+    pulses.forEach(pulse => {
+      pulse.classList.add('animate');
+    });
+    // Start visualizer
+    initAudioContext();
+    updateVisualizer();
+    updateIcon();
   });
 
   audio.addEventListener('pause', function () {
-    // Keep song name visible - don't clear it
+    // Stop pulse animation
+    pulses.forEach(pulse => {
+      pulse.classList.remove('animate');
+    });
+    // Stop visualizer
+    cancelAnimationFrame(animationId);
+    bars.forEach(bar => {
+      bar.style.height = '1rem';
+    });
+    updateIcon();
   });
 
 });

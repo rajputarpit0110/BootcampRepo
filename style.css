@@ -20,8 +20,10 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(10px);
+    backdrop-filter: blur(10px);
     z-index: -1;
     opacity: 0.5;
+    background-image: url('bg.jpg');
 }
 .upper-image-container {
     position: absolute;
@@ -35,8 +37,9 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
+    background-image: url('image.png');
 }
 
 .upper-image-container.show {
@@ -51,7 +54,12 @@ body{
 nav{
     display: flex;
     height: 3rem;
-    background-color:#202020;
+    background: linear-gradient(135deg,
+            #000000,
+            #0a0a1f,
+            #120022,
+            #1a0033,
+            #000000);
     border-bottom: 1px solid pink;
     border-radius: 5px;
 }
@@ -66,9 +74,7 @@ nav{
     font-weight: 700;
     color:pink;
 }
-/* .player-name{
-    color: pink;
-} */
+
 .nav-part2{
     display: flex;
     justify-content: center;
@@ -93,10 +99,21 @@ main{
     padding: 0.5rem;
     margin: 0.5rem;
     margin-left: 1rem;
-    background-color:#202020;
+    background: linear-gradient(135deg,
+            #000000,
+            #0a0a1f,
+            #120022,
+            #1a0033,
+            #000000);
     border-radius: 5px;
     font-size: 0.85rem;
 }
+
+.song.active{
+    color: #e281ab;   /* dark pink */
+    font-weight: 600;
+}
+
 .song:hover{
     cursor: pointer;
     background-color: #434141;
@@ -104,7 +121,7 @@ main{
 .music-player .upper-player {
     height: 100%;
     width: 69vw;
-    background-image: url(bg.jpg);
+    /* background-image: url(bg.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -114,6 +131,7 @@ main{
     position: relative;
     overflow: hidden;
     z-index: 10;
+    /* backdrop-filter: blur(20px); */
 }
 
 .upper-image-container {
@@ -131,7 +149,12 @@ main{
 }
 
 .music-player .lower-player {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(32, 32, 32, 0.9) 100%);
+    background: linear-gradient(135deg,
+            #000000,
+            #0a0a1f,
+            #120022,
+            #1a0033,
+            #000000);
     height: 3rem;
     display: flex;
     align-items: center;
@@ -217,6 +240,3 @@ main{
     border-radius: 5px;
     transform: scale(1.3);
 }
-
-
-
