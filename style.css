@@ -1,242 +1,225 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: "Montserrat", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Bungee", sans-serif;
 }
-body{
+
+body {
+    background: linear-gradient(135deg,
+            #000000,
+            #0a0a1f,
+            #120022,
+            #1a0033,
+            #000000);
+    background-repeat: no-repeat;
     height: 100vh;
-    background-color: black;
-    color: azure;
-    overflow: hidden;
-    position: relative;
+    width: 100vw;
+    color: pink;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.song-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(10px);
-    backdrop-filter: blur(10px);
-    z-index: -1;
-    opacity: 0.5;
-    background-image: url('bg.jpg');
-}
-.upper-image-container {
+
+.circle {
+    border: 3px solid #7B85E6;
+    border-radius: 2rem;
+    /* margin: 2rem; */
+    /* border-radius: 50%; */
     position: absolute;
-    width: 15rem;
-    height: 15rem;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    background-image: url('image.png');
+    /* transform: rotateX(70deg); */
+    animation: animate 1.5s ease-in-out alternate infinite;
+
 }
 
-.upper-image-container.show {
-    opacity: 1;
+.left-circle {
+    left: 0%;
 }
 
-.music-player .upper-player.song-playing {
-    background-image: none;
-    /* background-color: rgba(0, 20, 40, 0.6); */
+.right-circle {
+    right: 0%;
 }
 
-nav{
-    display: flex;
-    height: 3rem;
-    background: linear-gradient(135deg,
-            #000000,
-            #0a0a1f,
-            #120022,
-            #1a0033,
-            #000000);
-    border-bottom: 1px solid pink;
-    border-radius: 5px;
-}
-.nav-part1{
-    display: flex;
-    align-items: center;
-    flex: 1.3;
-}
-.logo{
-    font-size: 2rem;
-    padding: 0 1rem;
-    font-weight: 700;
-    color:pink;
+.circle1 {
+    height: 5rem;
+    width: 5rem;
+    animation-delay: 0s;
 }
 
-.nav-part2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 3;
-}
-main{
-    display: flex;
-}
-.playlist{
-    /* background-color:blue; */
-    height: 90vh;
-    width: 35vw;
-    overflow:scroll;
-    scrollbar-width: none;
-    margin-right: 1.5rem;
-    border-right:1px solid pink;
-    border-radius: 5px;
-    background-color: rgba(32, 32, 32, 0.7);
-}
-.song{
-    padding: 0.5rem;
-    margin: 0.5rem;
-    margin-left: 1rem;
-    background: linear-gradient(135deg,
-            #000000,
-            #0a0a1f,
-            #120022,
-            #1a0033,
-            #000000);
-    border-radius: 5px;
-    font-size: 0.85rem;
+.circle2 {
+    height: 6rem;
+    width: 6rem;
+    animation-delay: 0.1s;
 }
 
-.song.active{
-    color: #e281ab;   /* dark pink */
-    font-weight: 600;
+.circle3 {
+    height: 7rem;
+    width: 7rem;
+    animation-delay: 0.2s;
 }
 
-.song:hover{
-    cursor: pointer;
-    background-color: #434141;
-}
-.music-player .upper-player {
-    height: 100%;
-    width: 69vw;
-    /* background-image: url(bg.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
-    /* backdrop-filter: blur(20px); */
-}
-
-.upper-image-container {
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-}
-
-.music-player .lower-player {
-    background: linear-gradient(135deg,
-            #000000,
-            #0a0a1f,
-            #120022,
-            #1a0033,
-            #000000);
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    position: fixed;
-    bottom: 1rem;
-    right: 0.7rem;
-    width: 65vw;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 192, 203, 0.3);
-    padding: 0 1.5rem;
-    z-index: 100;
-}
-
-.music-player .lower-player i {
-    font-size: 1.1rem;
-    color: #00d4ff;
-    transition: all 0.3s ease;
-}
-
-.music-player .lower-player i:hover {
-    background-color: #202020;
-    border-radius: 50%;
-    color: #ff00ff;
-}
-
-.music-player .lower-player .play {
-    font-size: 1.3rem;
-    border-radius: 50%;
-    padding: 0.5rem;
-    background-color: rgba(0, 212, 255, 0.2);
-}
-
-.music-player .lower-player .play:hover {
-    background-color: rgba(0, 212, 255, 0.4);
-}
-
-.music-player .lower-player .progress {
-    width: 20rem;
-    height: 0.4rem;
-    cursor: pointer;
-    accent-color: #00d4ff;
-}
-
-.music-player .lower-player .time {
-    font-size: 0.75rem;
-    color: #0099ff;
-    min-width: 2.5rem;
-    text-align: center;
-}
-
-.volume {
+.circle4 {
+    height: 8rem;
     width: 8rem;
-    height: 0.4rem;
-    accent-color: #00d4ff;
-    cursor: pointer;
+    animation-delay: 0.3s;
 }
 
-.volume-icon {
-    font-size: 1rem;
-    color: #0099ff;
-    margin-left: 0.5rem;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-.volume-icon:hover {
-    transform: scale(1.05);
+.circle5 {
+    height: 9rem;
+    width: 9rem;
+    animation-delay: 0.4s;
 }
 
-.replay, .loop {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #0099ff;
+.circle6 {
+    height: 10rem;
+    width: 10rem;
+    animation-delay: 0.5s;
 }
 
-.replay:hover {
-    color: #ff00ff;
-    transform: scale(1.1);
+.circle7 {
+    height: 11rem;
+    width: 11rem;
+    animation-delay: 0.6s;
 }
 
-.loop.active {
-    background-color: #245270;
-    border-radius: 5px;
-    transform: scale(1.3);
+.circle8 {
+    height: 12rem;
+    width: 12rem;
+    animation-delay: 0.7s;
+}
+
+.circle9 {
+    height: 13rem;
+    width: 13rem;
+    animation-delay: 0.8s;
+}
+
+.circle10 {
+    height: 14rem;
+    width: 14rem;
+    animation-delay: 0.9s;
+}
+.circle11 {
+    height: 15rem;
+    width: 15rem;
+    animation-delay: 1s;
+}
+.circle12 {
+    height: 16rem;
+    width: 16rem;
+    animation-delay: 1.1s;
+}
+.circle13 {
+    height: 17rem;
+    width: 17rem;
+    animation-delay: 1.2s;
+}
+.circle14 {
+    height: 18rem;
+    width: 18rem;
+    animation-delay: 1.3s;
+}
+.circle15 {
+    height: 19rem;
+    width: 19rem;
+    animation-delay: 1.4s;
+}
+.circle16 {
+    height: 20rem;
+    width: 20rem;
+    animation-delay: 1.5s;
+}
+.circle17 {
+    height: 21rem;
+    width: 21rem;
+    animation-delay: 1.6s;
+}
+.circle18 {
+    height: 22rem;
+    width: 22rem;
+    animation-delay: 1.7s;
+}
+.circle19 {
+    height: 23rem;
+    width: 23rem;
+    animation-delay: 1.8s;
+}
+.circle20 {
+    height: 24rem;
+    width: 24rem;
+    animation-delay: 1.9s;
+}
+.circle21 {
+    height: 25rem;
+    width: 25rem;
+    animation-delay: 2s;
+}
+.circle22 {
+    height: 26rem;
+    width: 26rem;
+    animation-delay: 2.1s;
+}
+.circle23 {
+    height: 27rem;
+    width: 27rem;
+    animation-delay: 2.2s;
+}
+.circle24 {
+    height: 28rem;
+    width: 28rem;
+    animation-delay: 2.3s;
+}
+.circle25 {
+    height: 29rem;
+    width: 29rem;
+    animation-delay: 2.4s;
+}
+
+.logo {
+    height: 14rem;
+    margin-top: 3rem;
+}
+
+.short-name {
+    font-size: 9rem;
+    color: pink;
+    margin: 0%;
+}
+
+.name {
+    font-size: 2rem;
+    position: relative;
+    /* left: 7rem; */
+    margin: 0%;
+}
+
+a{
+    padding: 0.4rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    border: #ebebf1 2px solid;
+    border-radius:3px 10px;
+    position: relative;
+    /* left: 7rem ; */
+    background-color: #000000;
+    color: #d6d7e2;
+    transition: 0.15s ease-in-out;
+}
+a:hover{
+    border-color: #646cff;
+    color: #bec2e4;
+    border-width: 4px ;
+    transform: scale(1.2);
+    margin-top: 1rem;
+}
+
+@keyframes animate {
+    from {
+        width: 0rem;
+    }
+
+    to {
+        width: 15rem;
+    }
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSDL – Drop Some Dope Logic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="musical-note.png">
+</head>
+
+<body>
+    <div class="song-backdrop"></div>
+    
+    <nav>
+        <div class="nav-part1">
+            <div class="logo">DSDL</div>
+            <div class="player-name">Drop Some Dope Logic</div>
+        </div>
+        <div class="nav-part2"></div>
+    </nav>
+    <main>
+        <div class="playlist">
+            <div class="song song1">Tareefan (Sonu Thukral, Fukra Insaan, Kanika Mann)</div>
+            <div class="song song2">Wajah Bewajah (Vishal Mishra, Shreyas Puranik, Kumaar)</div>
+            <div class="song song3">Samjhawan (Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal)</div>
+            <div class="song song4">Nazare (Gur Sidhu, Kaptaan, Cheema Y)</div>
+            <div class="song song5">Kasturi (Arijit Singh, Prasad S, Kunaal Vermaa)</div>
+            <div class="song song6">Thinking of You (AP Dhillon)</div>
+            <div class="song song7">Iss Tarah (Chaar Diwaari, Sonu Nigam)</div>
+            <div class="song song8">Khat (Navjot Ahuja)</div>
+            <div class="song song9">O Meri Laila (Atif Aslam, Jyotica Tangri)</div>
+            <div class="song song10">Dil (Ninja, Sara Gurpal)</div>
+            <div class="song song11">Bam Lahiri (Kailash Kher, Paresh Kamath, Naresh Kamath)</div>
+            <div class="song song12">Lae Dooba (Sunidhi Chauhan, Manoj Muntashir)</div>
+            <div class="song song13">Shararatt (Shashwat Sachdev, Madhubanti Bagchi)</div>
+            <div class="song song14">Main Hoon (Ayaan Lall, Shreya Ghoshal, Shabbir Ahmed)</div>
+            <div class="song song15">Qubool (Armaan Khan, Vishal Mishra, Kaushal Kishore)</div>
+            <div class="song song16">Parvati Boli Shankar Se (Hansraj Raghuwanshi, Bharat Kamal)</div>
+            <div class="song song17">Preet Re (Darshan Raval, Rochak Kohli, Jonita Gandhi)</div>
+            <div class="song song18">Apna Bana Le (Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya)</div>
+            <div class="song song19">Nazm Nazm (Arko)</div>
+            <div class="song song20">Saiyaara (Tanishk Bagchi, Faheem Abdullah, Arslan Nizami)</div>
+
+        </div>
+        <div class="music-player">
+            <div class="upper-player">
+                <div class="upper-image-container"></div>
+                <div class="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="lower-player">
+                <i class="fa-solid fa-caret-left"></i>
+                <i class="fa-solid fa-play play"></i>
+                <i class="fa-solid fa-caret-right"></i>
+                <i class="fa-solid fa-redo replay"></i>
+                <i class="fa-solid fa-repeat loop"></i>
+                <span class="time time-current">00:00</span>
+                <input type="range" class="progress" min="0" max="100" value="0">
+                <span class="time time-duration">00:41</span>
+                <i class="fa-solid fa-volume-high volume-icon"></i>
+                <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
